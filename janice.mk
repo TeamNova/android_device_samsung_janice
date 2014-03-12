@@ -10,6 +10,17 @@ LOCAL_PATH := device/samsung/janice
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
+PRODUCT_AAPT_PREF_CONFIG := xhdpi
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.dexopt-cache-only=0 \
+    dalvik.vm.dexopt-data-only=1
+
+# Graphics
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.zygote.disable_gl_preload=true \
+    ro.bq.gpu_to_cpu_unsupported=1
 
 # STE
 PRODUCT_COPY_FILES += \
