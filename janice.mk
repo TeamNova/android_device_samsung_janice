@@ -64,6 +64,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/adm.sqlite-u8500:system/etc/adm.sqlite-u8500 \
     $(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf
+    
+# Update Me OTA xml
+PRODUCT_COPY_FILES += \
+vendor/cm/prebuilt/updateme/i9070/update_me.xml:system/update_me.xml
 
 # Use non-open-source parts if present
 $(call inherit-product-if-exists, vendor/samsung/u8500-common/janice/janice-vendor-blobs.mk)
