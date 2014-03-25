@@ -70,4 +70,4 @@ PRODUCT_COPY_FILES += \
    $(LOCAL_PATH)/configs/system_id.cfg:system/etc/AT/system_id.cfg
 
 # Use non-open-source parts if present
-$(call inherit-product-if-exists, vendor/samsung/u8500-common/janice/janice-vendor-blobs.mk)
+$(call inherit-product-if-exists, vendor/samsung/janice/janice-vendor-blobs.mk)
