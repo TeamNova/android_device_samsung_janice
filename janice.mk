@@ -69,5 +69,12 @@ PRODUCT_COPY_FILES += \
    $(LOCAL_PATH)/configs/model_id.cfg:system/etc/AT/model_id.cfg \
    $(LOCAL_PATH)/configs/system_id.cfg:system/etc/AT/system_id.cfg
 
+# Storage switch script
+PRODUCT_COPY_FILES += \
+   $(LOCAL_PATH)/configs/SwapStorages.sh:system/xbin/SwapStorages.sh
+PRODUCT_PROPERTY_OVERRIDES += \
+   persist.sys.vold.switchablepair=sdcard0,sdcard1 \
+   persist.sys.vold.switchexternal=0
+
 # Use non-open-source parts if present
 $(call inherit-product-if-exists, vendor/samsung/janice/janice-vendor-blobs.mk)
