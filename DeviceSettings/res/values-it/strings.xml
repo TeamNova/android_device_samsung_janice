@@ -13,7 +13,7 @@
     <string name="accelerometer_dialog_head">Calibrazione effettuata</string>
     <string name="accelerometer_dialog_message">Il sensore è stato correttamente calibrato.</string>
     <string name="deepest_sleep_title_head">Profondissimo Deep Sleep</string>
-    <string name="deepest_sleep_summary_head">Specifica il livello di deep sleep</string>
+    <string name="deepest_sleep_summary_head">Specifica il più alto livello di deep sleep</string>
     <string name="category_screen_title">Schermo</string>
     <string name="screen_colors_title">Colori</string>
     <string name="panel_gamma_title_head">Gamma schermo</string>
@@ -62,10 +62,5 @@
     <string name="mmc_subcat_title">Scheda SD</string>
     <string name="use_spi_crc_title_head">Disabilita SPI CRC</string>
     <string name="use_spi_crc_summary_head">Disabilitando lo SPI CRC, possono migliorare le performance della Scheda SD (10% - 30%) ma il telefono potrebbe freezare in modo casuale</string>
-
-    <!-- CATEGORY: STORAGE -->
-    <string name="storage_subcat_title">Memoria</string>
-    <string name="switch_storage_title_head">Scambia partizioni</string>
-    <string name="switch_storage_summary_head">Scambia la partizione dell'archivio interno con la tua scheda microSD. Riavvio richiesto.</string>
 
 </resources>

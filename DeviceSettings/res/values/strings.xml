@@ -76,10 +76,5 @@
     <string name="mmc_subcat_title">MMC</string>
     <string name="use_spi_crc_title_head">Disable SPI CRC</string>
     <string name="use_spi_crc_summary_head">Disabling SPI CRC can improve mmc performance (10% - 30%) but phone may freeze randomly</string>
-
-    <!-- CATEGORY: STORAGE -->
-    <string name="storage_subcat_title">Storage</string>
-    <string name="switch_storage_title_head">Swap Storages</string>
-    <string name="switch_storage_summary_head">Switches internal storage partition with external sd-card. Reboot required.</string>
-
+    
 </resources>
