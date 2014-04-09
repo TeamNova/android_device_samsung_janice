@@ -431,6 +431,7 @@ on boot
     # system permissions for device parts
     chown system system /d/cpuidle/deepest_state
     chown system system /sys/devices/system/cpu/sched_mc_power_savings
+    chown system system /sys/block/mmcblk0/queue/read_ahead_kb
     chown system system /sys/module/mali/parameters/mali_l2_max_reads
     chown system system /sys/module/mali/parameters/pre_allocated_memory_size_max
     chown system system /sys/kernel/abb-regu/VOTG
