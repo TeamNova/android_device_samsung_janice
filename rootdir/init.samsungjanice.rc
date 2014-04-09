@@ -439,6 +439,8 @@ on boot
     chown system system /sys/kernel/mxt224e/sweep2wake
     chown system system /sys/kernel/debug/cpuidle/deepest_state
     chown system system /sys/kernel/fsync/mode
+    chown system system /sys/kernel/mali/mali_gpu_clock
+    chown system system /sys/kernel/mali/mali_auto_boost
     chown system system /sys/module/mmc_core/parameters/use_spi_crc
     chown system system /sys/module/dhd/parameters/dhdpm_fast
     chown system system /sys/kernel/mxt224e/threshold_t48
