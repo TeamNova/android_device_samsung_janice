@@ -429,25 +429,26 @@ on boot
     chmod 0222 /sys/class/sec/flash/enable
 
     # system permissions for device parts
-    chown system system /d/cpuidle/deepest_state
-    chown system system /sys/devices/system/cpu/sched_mc_power_savings
     chown system system /sys/block/mmcblk0/queue/read_ahead_kb
-    chown system system /sys/module/mali/parameters/mali_l2_max_reads
-    chown system system /sys/module/mali/parameters/pre_allocated_memory_size_max
-    chown system system /sys/kernel/abb-regu/VOTG
+    chown system system /sys/devices/system/cpu/sched_mc_power_savings
     chown system system /sys/kernel/abb-charger/max_ac_c
     chown system system /sys/kernel/abb-charger/max_usb_c
     chown system system /sys/kernel/abb-codec/anagain3
     chown system system /sys/kernel/abb-codec/hsrdiggain
     chown system system /sys/kernel/abb-codec/hsldiggain
-    chown system system /sys/kernel/fsync/mode
+    chown system system /sys/kernel/abb-regu/VOTG
     chown system system /sys/kernel/mxt224e/sweep2wake
+    chown system system /sys/kernel/debug/cpuidle/deepest_state
+    chown system system /sys/kernel/fsync/mode
     chown system system /sys/module/mmc_core/parameters/use_spi_crc
     chown system system /sys/module/dhd/parameters/dhdpm_fast
     chown system system /sys/kernel/mxt224e/threshold_t48
     chown system system /sys/devices/pri_lcd_s6e63m0.0/filter_R
     chown system system /sys/devices/pri_lcd_s6e63m0.0/filter_G
     chown system system /sys/devices/pri_lcd_s6e63m0.0/filter_B
+    chown system system /sys/module/mali/parameters/mali_l2_max_reads
+    chown system system /sys/module/mali/parameters/pre_allocated_memory_size_max
+    chown system system /proc/sys/net/ipv4/tcp_congestion_control
     write /sys/kernel/mxt224e/threshold_t48 on
     
 
