@@ -12,5 +12,22 @@
             android:title="@string/set_gpu_clock_title_head"
             android:entries="@array/set_gpu_clock_entries"
             android:entryValues="@array/set_gpu_clock_entries_values" />
+    </PreferenceCategory>    
+    <PreferenceCategory android:title="@string/gpu_misc_title">
+        <com.teamcanjica.settings.device.MasterListPreference
+            android:defaultValue="48"
+            android:entries="@array/mali_l2_mr_entries"
+            android:entryValues="@array/mali_l2_mr_entries_values"
+            android:key="mali_l2_mr"
+            android:summary="@string/mali_l2_mr_summary_head"
+            android:title="@string/mali_l2_mr_title_head" />
+
+		<com.teamcanjica.settings.device.MasterListPreference
+            android:defaultValue="50331648"
+            android:entries="@array/mali_pam_entries"
+            android:entryValues="@array/mali_pam_entries_values"
+            android:key="mali_pam"
+            android:summary="@string/mali_pam_summary_head"
+            android:title="@string/mali_pam_title_head" />
     </PreferenceCategory>
 </PreferenceScreen>

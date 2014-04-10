@@ -164,5 +164,8 @@
     <string name="disable_autoboost_summary_head">Disabling autoboosting GPU governor will allow you to manually set static GPU clock speeds.</string>
 	<string name="set_gpu_clock_title_head">Clock Speed</string>
     <string name="set_gpu_clock_summary_head">Set static GPU clock speed</string>
+    
+    <!-- SUBCATEGORY: GPU MISC -->
+    <string name="gpu_misc_title">Miscellaneous</string>
 
 </resources>
