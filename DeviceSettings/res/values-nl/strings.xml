@@ -12,18 +12,14 @@
      distributed under the License is distributed on an "AS IS" BASIS,
      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
      See the License for the specific language governing permissions and
-     limitations under the License.
+     limitations under the License.
+
+
+
 -->
 <resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <string name="app_name">Galaxy S Advance-instellingen</string>
-    <string name="screen_colors_title">Kleuren</string>
-    <string name="category_screen_title">Scherm</string>
-    <string name="panel_gamma_title_head">Schermgamma</string>
-    <string name="panel_gamma_summary_head">Schermgammawaarden instellen</string>
-    <string name="touchscreen_subcat_title">Aanraakscherm</string>
-    <string name="touchscreen_sensitivity_title_head">Aanraakgevoeligheid</string>
-    <string name="touchscreen_sensitivity_summary_head">Gevoeligheid aanraakscherm instellen</string>
     <string name="accelerometer_subcat_title">Gyroscoop</string>
     <string name="use_accelerometer_calibration_title_head">Kalibratiegegevens gebruiken</string>
     <string name="use_accelerometer_calibration_summary_head">Kalibratiewaarden van de gyroscoop gebruiken. Voer hierna a.u.b. een kalibratie uit.</string>
@@ -40,11 +36,6 @@
 
     <!-- CATEGORY: Radio mode -->
     <string name="radio_subcat_title">Radio mode</string>
-
-    <!-- TAB: Screen -->
-    <!-- CATEGORY: TouchScreen -->
-    <string name="use_sweep2wake_title_head">Sweep2Wake</string>
-    <string name="use_sweep2wake_summary_head">Unlock device with a swype</string>
 
     <!-- TAB: USB -->
     <string name="category_usb_title">Usb</string>
@@ -72,7 +63,7 @@
     <!-- CATEGORY: FSync -->
     <string name="fsync_subcat_title">FSync</string>
     <string name="fsync_title_head">FSync mode</string>
-    <string name="fsync_summary_head">Disabling fsync can improve IO performace, but it may cause data corruption. Dynamic fsync will sync all buffers when screen turns off.</string>
+    <string name="fsync_summary_head">Disabling fsync can improve IO performance, but it may cause data corruption. Dynamic fsync will sync all buffers when screen turns off.</string>
 
     <!-- CATEGORY: GPU -->
     <string name="gpu_subcat_title">GPU</string>

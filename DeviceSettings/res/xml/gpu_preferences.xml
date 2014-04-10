@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    <PreferenceCategory android:title="@string/clock_speed_title" >
+        <CheckBoxPreference
+            android:key="disable_autoboost"
+            android:summary="@string/disable_autoboost_summary_head"
+            android:title="@string/disable_autoboost_title_head" />
+
+        <com.teamcanjica.settings.device.MasterListPreference
+            android:key="set_gpu_clock"
+            android:summary="@string/set_gpu_clock_summary_head"
+            android:title="@string/set_gpu_clock_title_head"
+            android:entries="@array/set_gpu_clock_entries"
+            android:entryValues="@array/set_gpu_clock_entries_values" />
+    </PreferenceCategory>
+</PreferenceScreen>

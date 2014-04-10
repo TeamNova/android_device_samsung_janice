@@ -2,7 +2,6 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <PreferenceCategory android:title="@string/otg_subcat_title" >
-
         <!-- USB OTG Power -->
         <CheckBoxPreference
             android:defaultValue="false"
@@ -10,25 +9,28 @@
             android:summary="@string/otg_power_summary_head"
             android:title="@string/otg_power_title_head" />
     </PreferenceCategory>
+
     <PreferenceCategory android:title="@string/cc_subcat_title" >
-
-        <!-- Wall charger control -->
-        <com.cyanogenmod.settings.device.ChargerCurrency
+        <!-- Charger control -->
+        <CheckBoxPreference
+            android:key="use_charger_control"
+            android:summary="@string/use_cc_summary_head"
+            android:title="@string/use_cc_title_head" />
+        <com.teamcanjica.settings.device.MasterListPreference
             android:defaultValue="600"
-            android:entries="@array/cc_currency_charger_entries"
-            android:entryValues="@array/cc_currency_charger_entries_values"
-            android:key="ac_currency"
-            android:summary="@string/ac_cc_summary_head"
-            android:title="@string/ac_cc_title_head" />
+            android:entries="@array/charger_currency_entries"
+            android:entryValues="@array/charger_currency_entries_values"
+            android:key="charger_currency"
+            android:summary="@string/cc_summary_head"
+            android:title="@string/cc_title_head" />
+    </PreferenceCategory>
 
-        <!-- USB cable charge control -->
-        <com.cyanogenmod.settings.device.UsbCurrency
-            android:defaultValue="600"
-            android:entries="@array/cc_currency_usb_entries"
-            android:entryValues="@array/cc_currency_usb_entries_values"
-            android:key="usb_currency"
-            android:summary="@string/usb_cc_summary_head"
-            android:title="@string/usb_cc_title_head" />
+    <PreferenceCategory android:title="@string/eoc_title" >
+        <!-- End of charge -->
+        <Preference
+            android:key="eoc_status"
+            android:summary="@string/eoc_summary_head"
+            android:title="@string/eoc_title_head" />
     </PreferenceCategory>
 
 </PreferenceScreen>

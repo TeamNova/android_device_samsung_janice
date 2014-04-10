@@ -2,12 +2,6 @@
 <resources>
 
     <string name="app_name">Config. Galaxy S Advance</string>
-    <string name="screen_colors_title">Cores</string>
-    <string name="panel_gamma_title_head">Gama da Tela</string>
-    <string name="panel_gamma_summary_head">Define valor da gama da tela</string>
-    <string name="touchscreen_subcat_title">Tela sensível ao toque</string>
-    <string name="touchscreen_sensitivity_title_head">Sensitividade do toque</string>
-    <string name="touchscreen_sensitivity_summary_head">Define a sensitividade do toque na tela</string>
     <string name="hspa_title_head">HSPA</string>
     <string name="hspa_summary_head">Ativa HSDPA/HSUPA</string>
     <string name="category_screen_title">Tela</string>
@@ -25,10 +19,6 @@
 
     <!-- CATEGORY: Radio mode -->
     <string name="radio_subcat_title">Radio mode</string>
-
-    <!-- TAB: SCREEN (Sweep2Wake) -->
-    <string name="use_sweep2wake_title_head">Sweep2Wake</string>
-    <string name="use_sweep2wake_summary_head">Unlock device with a swype</string>
 
     <!-- TAB: USB -->
     <string name="category_usb_title">Usb</string>
@@ -56,7 +46,7 @@
     <!-- CATEGORY: FSync -->
     <string name="fsync_subcat_title">FSync</string>
     <string name="fsync_title_head">FSync mode</string>
-    <string name="fsync_summary_head">Disabling fsync can improve IO performace, but it may cause data corruption. Dynamic fsync will sync all buffers when screen turns off.</string>
+    <string name="fsync_summary_head">Disabling fsync can improve IO performance, but it may cause data corruption. Dynamic fsync will sync all buffers when screen turns off.</string>
 
     <!-- CATEGORY: GPU -->
     <string name="gpu_subcat_title">GPU</string>

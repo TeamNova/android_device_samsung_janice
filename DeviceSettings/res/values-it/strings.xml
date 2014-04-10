@@ -15,12 +15,6 @@
     <string name="deepest_sleep_title_head">Profondissimo Deep Sleep</string>
     <string name="deepest_sleep_summary_head">Specifica il più alto livello di deep sleep</string>
     <string name="category_screen_title">Schermo</string>
-    <string name="screen_colors_title">Colori</string>
-    <string name="panel_gamma_title_head">Gamma schermo</string>
-    <string name="panel_gamma_summary_head">Imposta il valore gamma dello schermo</string>
-    <string name="touchscreen_subcat_title">Schermo tattile</string>
-    <string name="touchscreen_sensitivity_title_head">Sensibilità tocco</string>
-    <string name="touchscreen_sensitivity_summary_head">Imposta la sensibilità al tocco dello schermo</string>
     <string name="otg_subcat_title">Impostazioni USB OTG</string>
     <string name="otg_power_title_head">Attivazione USB-OTG</string>
     <string name="otg_power_summary_head">Abilita alimentazione (in uscita) della porta USB</string>
@@ -32,10 +26,6 @@
 
     <!-- CATEGORY: Radio mode -->
     <string name="radio_subcat_title">Modalità Rete</string>
-
-    <!-- TAB: SCREEN (Sweep2Wake) -->
-    <string name="use_sweep2wake_title_head">Sweep2Wake</string>
-    <string name="use_sweep2wake_summary_head">Sblocca il telefono con uno swype</string>
 
     <!-- TAB: USB -->
     <string name="category_usb_title">Usb</string>
@@ -49,7 +39,7 @@
     <!-- CATEGORY: FSync -->
     <string name="fsync_subcat_title">FSync</string>
     <string name="fsync_title_head">Modalità FSync</string>
-    <string name="fsync_summary_head">Disabilitando Fsync puoi migliorare le performace I/O, ma potrebbe causare la corruzione dei dati. L\'Fsync dinamico sincronizzerà i buffer quando lo schermo si spegnerà.</string>
+    <string name="fsync_summary_head">Disabilitando Fsync puoi migliorare le performance I/O, ma potrebbe causare la corruzione dei dati. L\'Fsync dinamico sincronizzerà i buffer quando lo schermo si spegnerà.</string>
 
     <!-- CATEGORY: GPU -->
     <string name="gpu_subcat_title">GPU</string>
