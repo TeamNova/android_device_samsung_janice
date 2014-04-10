@@ -55,8 +55,15 @@ public class USBFragmentActivity extends PreferenceFragment {
 				isSupported(FILE_VOTG));
 		prefSet.findPreference(DeviceSettings.KEY_USE_CHARGER_CONTROL).setEnabled(
 				isSupported(FILE_CHARGER_CONTROL));
-		prefSet.findPreference(DeviceSettings.KEY_CHARGER_CURRENCY).setEnabled(
-		false);
+
+		CheckBoxPreference pref = (CheckBoxPreference) findPreference("use_charger_control");
+		if (pref.isChecked()){
+			prefSet.findPreference(DeviceSettings.KEY_CHARGER_CURRENCY).setEnabled(
+					true);
+		} else {
+			prefSet.findPreference(DeviceSettings.KEY_CHARGER_CURRENCY).setEnabled(
+					false);
+		}
 
 		getActivity().getActionBar().setTitle(getResources().getString(R.string.usb_name));
 		getActivity().getActionBar().setIcon(getResources().getDrawable(R.drawable.usb_icon));
