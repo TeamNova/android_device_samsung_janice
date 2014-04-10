@@ -15,7 +15,7 @@ public class S2WThreshold extends EditTextPreference implements OnPreferenceChan
 		this.setOnPreferenceChangeListener(this);
 	}
 	
-	private static final String FILE = "/sys/kernel/bt404/sweep2wake";
+	private static final String FILE = "/sys/kernel/mxt224e/sweep2wake";
 	
 	public static boolean isSupported() {
 		return Utils.fileExists(FILE);
