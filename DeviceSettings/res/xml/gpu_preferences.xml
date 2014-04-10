@@ -12,7 +12,13 @@
             android:title="@string/set_gpu_clock_title_head"
             android:entries="@array/set_gpu_clock_entries"
             android:entryValues="@array/set_gpu_clock_entries_values" />
-    </PreferenceCategory>    
+    
+        <CheckBoxPreference
+            android:key="enable_fullspeed"
+            android:summary="@string/enable_fullspeed_summary_head"
+            android:title="@string/enable_fullspeed_title_head" />
+    </PreferenceCategory>
+    
     <PreferenceCategory android:title="@string/gpu_misc_title">
         <com.teamcanjica.settings.device.MasterListPreference
             android:defaultValue="48"

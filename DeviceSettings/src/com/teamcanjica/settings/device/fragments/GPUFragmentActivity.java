@@ -19,6 +19,7 @@ public class GPUFragmentActivity extends PreferenceFragment {
 	private static final String TAG = "GalaxySAdvance_Settings_GPU";
 	
 	public static final String FILE_AUTOBOOST = "/sys/kernel/mali/mali_auto_boost";
+	public static final String FILE_FULLSPEED = "/sys/kernel/mali/mali_gpu_fullspeed";
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -28,12 +29,11 @@ public class GPUFragmentActivity extends PreferenceFragment {
 		// Will add a GPU icon soon 
 		getActivity().getActionBar().setTitle(getResources().getString(R.string.gpu_name));
 		getActivity().getActionBar().setIcon(getResources().getDrawable(R.drawable.screen_icon));
+
+		getPreferenceScreen().findPreference(DeviceSettings.KEY_SET_GPU_CLOCK).setEnabled(
+				((CheckBoxPreference) findPreference("disable_autoboost")).isChecked());
 	}
-	
-	public static boolean isSupported(String FILE) {
-		return Utils.fileExists(FILE);
-	}
-	
+
 	@Override
 	public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
 			Preference preference) {
@@ -44,11 +44,15 @@ public class GPUFragmentActivity extends PreferenceFragment {
 		Log.w(TAG, "key: " + key);
 
 		if (key.equals(DeviceSettings.KEY_DISABLE_AUTOBOOST)) {
-			if (((CheckBoxPreference) preference).isChecked()) {
-				Utils.writeValue(FILE_AUTOBOOST, "0");
-			} else {
-				Utils.writeValue(FILE_AUTOBOOST, "1");
-			}
+				Utils.writeValue(FILE_AUTOBOOST, !((CheckBoxPreference) preference)
+						.isChecked());
+				getPreferenceScreen().findPreference(DeviceSettings.KEY_SET_GPU_CLOCK).setEnabled(
+						((CheckBoxPreference) preference).isChecked());
+		}
+
+		if (key.equals(DeviceSettings.KEY_ENABLE_FULLSPEED)) {
+			Utils.writeValue(FILE_FULLSPEED, ((CheckBoxPreference) preference)
+					.isChecked());
 		}
 
 		return true;
@@ -58,8 +62,10 @@ public class GPUFragmentActivity extends PreferenceFragment {
 		SharedPreferences sharedPrefs = PreferenceManager
 				.getDefaultSharedPreferences(context);
 
-		String autoboostvalue = sharedPrefs.getBoolean(
-				DeviceSettings.KEY_DISABLE_AUTOBOOST, false) ? "0" : "1";
-		Utils.writeValue(FILE_AUTOBOOST, autoboostvalue);
+		Utils.writeValue(FILE_AUTOBOOST, sharedPrefs.getBoolean(
+				DeviceSettings.KEY_DISABLE_AUTOBOOST, false) ? "0" : "1");
+		
+		Utils.writeValue(FILE_FULLSPEED, sharedPrefs.getBoolean(
+				DeviceSettings.KEY_ENABLE_FULLSPEED, false) ? "1" : "0");
 	}
 }
