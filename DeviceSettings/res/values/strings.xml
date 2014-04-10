@@ -157,8 +157,8 @@
     <string name="disable_autoboost_summary_head">Disabling autoboosting GPU governor will allow you to manually set static GPU clock speeds.</string>
 	<string name="set_gpu_clock_title_head">Clock Speed</string>
     <string name="set_gpu_clock_summary_head">Set static GPU clock speed</string>
-    <string name="enable_fullspeed_title_head">Enable GPU clock fullspeed</string>
-    <string name="enable_fullspeed_summary_head">By default, GPU clock speed is half (399 kHz / 2 = 199 kHz, etc.) Change it to fullspeed.</string>
+    <string name="disable_fullspeed_title_head">Diable GPU clock fullspeed</string>
+    <string name="disable_fullspeed_summary_head">By default, GPU clock is working at fullspeed. Change it to halfspeed (399 kHz / 2 = 199 kHz, etc.)</string>
     
     <!-- SUBCATEGORY: GPU MISC -->
     <string name="gpu_misc_title">Miscellaneous</string>

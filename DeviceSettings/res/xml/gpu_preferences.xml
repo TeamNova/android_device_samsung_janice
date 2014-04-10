@@ -14,9 +14,9 @@
             android:entryValues="@array/set_gpu_clock_entries_values" />
     
         <CheckBoxPreference
-            android:key="enable_fullspeed"
-            android:summary="@string/enable_fullspeed_summary_head"
-            android:title="@string/enable_fullspeed_title_head" />
+            android:key="disable_fullspeed"
+            android:summary="@string/disable_fullspeed_summary_head"
+            android:title="@string/disable_fullspeed_title_head" />
     </PreferenceCategory>
     
     <PreferenceCategory android:title="@string/gpu_misc_title">

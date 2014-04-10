@@ -50,8 +50,8 @@ public class GPUFragmentActivity extends PreferenceFragment {
 						((CheckBoxPreference) preference).isChecked());
 		}
 
-		if (key.equals(DeviceSettings.KEY_ENABLE_FULLSPEED)) {
-			Utils.writeValue(FILE_FULLSPEED, ((CheckBoxPreference) preference)
+		if (key.equals(DeviceSettings.KEY_DISABLE_FULLSPEED)) {
+			Utils.writeValue(FILE_FULLSPEED, !((CheckBoxPreference) preference)
 					.isChecked());
 		}
 
@@ -66,6 +66,6 @@ public class GPUFragmentActivity extends PreferenceFragment {
 				DeviceSettings.KEY_DISABLE_AUTOBOOST, false) ? "0" : "1");
 		
 		Utils.writeValue(FILE_FULLSPEED, sharedPrefs.getBoolean(
-				DeviceSettings.KEY_ENABLE_FULLSPEED, false) ? "1" : "0");
+				DeviceSettings.KEY_DISABLE_FULLSPEED, false) ? "0" : "1");
 	}
 }

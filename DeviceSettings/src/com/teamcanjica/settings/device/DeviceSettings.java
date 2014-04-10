@@ -49,7 +49,7 @@ public class DeviceSettings extends Activity implements OnItemClickListener{
 	public static final String KEY_SEEKBARVAL = "seekbarvalue";
 	public static final String KEY_DISABLE_AUTOBOOST = "disable_autoboost";
 	public static final String KEY_SET_GPU_CLOCK = "set_gpu_clock";
-	public static final String KEY_ENABLE_FULLSPEED = "enable_fullspeed";
+	public static final String KEY_DISABLE_FULLSPEED = "disable_fullspeed";
 	
 	public static final String SELECTION = "selection";
 	
