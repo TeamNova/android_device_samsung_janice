@@ -24,7 +24,7 @@ public class MasterSeekBarDialogPreference extends
 	// Custom xml attributes.
 	private int maximumValue = 0;
 	private int minimumValue = 0;
-	private int stepSize = 0;
+	private float stepSize = 0;
 	private String units = null;
 
 	private int value = 0;
@@ -51,7 +51,7 @@ public class MasterSeekBarDialogPreference extends
 			R.styleable.MasterSeekBarDialogPreference_maximumValue, 0);
 		minimumValue = typedArray.getInteger(
 			R.styleable.MasterSeekBarDialogPreference_minimumValue, 0);
-		stepSize = typedArray.getInteger(
+		stepSize = typedArray.getFloat(
 			R.styleable.MasterSeekBarDialogPreference_stepSize, 1);
 		units = typedArray.getString(
 			R.styleable.MasterSeekBarDialogPreference_units);
@@ -80,7 +80,7 @@ public class MasterSeekBarDialogPreference extends
 		}
 
 		seekBar.setOnSeekBarChangeListener(this);
-		seekBar.setKeyProgressIncrement(stepSize);
+		seekBar.setKeyProgressIncrement((int) stepSize);
 		seekBar.setMax(maximumValue - minimumValue);
 		SharedPreferences prefs = getContext().getSharedPreferences(DeviceSettings.KEY_SEEKBARVAL, Context.MODE_PRIVATE);
 		value = prefs.getInt("seekBarValue", 512);
@@ -95,7 +95,7 @@ public class MasterSeekBarDialogPreference extends
 			boolean fromTouch) {
 		// Round the value to the closest integer value.
 		if (stepSize >= 1) {
-			value = Math.round(newValue/stepSize)*stepSize;
+			value = (int) Math.round(newValue/stepSize)*stepSize;
 		}
 		else {
 			value = newValue;
@@ -142,7 +142,7 @@ public class MasterSeekBarDialogPreference extends
 			Utils.writeValue(FILE_READAHEADKB, String.valueOf((Integer) newValue + 128));
 		} else if (key.equals(DeviceSettings.KEY_CPU_VOLTAGE)) {
 			switch ((String) newValue) {
-			case "-12.5":
+			case "37":
 				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(0), "0x17");
 				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(1), "0x19");
 				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(2), "0x1f");
@@ -154,7 +154,7 @@ public class MasterSeekBarDialogPreference extends
 				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(8), "0x3e");
 				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(9), "0x3e");
 				break;
-			case "-25.0":
+			case "25":
 				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(0), "0x16");
 				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(1), "0x18");
 				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(2), "0x1e");
@@ -166,7 +166,7 @@ public class MasterSeekBarDialogPreference extends
 				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(8), "0x3d");
 				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(9), "0x3d");
 				break;
-			case "-37.5":
+			case "12":
 				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(0), "0x15");
 				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(1), "0x17");
 				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(2), "0x1d");
@@ -178,7 +178,7 @@ public class MasterSeekBarDialogPreference extends
 				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(8), "0x3c");
 				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(9), "0x3c");
 				break;
-			case "-50.0":
+			case "0":
 				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(0), "0x14");
 				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(1), "0x16");
 				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(2), "0x1c");
@@ -216,8 +216,8 @@ public class MasterSeekBarDialogPreference extends
 		Utils.writeValue(FILE_READAHEADKB,
 				String.valueOf(sharedPrefs.getString(DeviceSettings.KEY_READAHEADKB, "512")));
 
-		switch (String.valueOf(sharedPrefs.getString(DeviceSettings.KEY_CPU_VOLTAGE, "0.0"))) {
-		case "-12.5":
+		switch (String.valueOf(sharedPrefs.getString(DeviceSettings.KEY_CPU_VOLTAGE, "0"))) {
+		case "37":
 			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(0), "0x17");
 			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(1), "0x19");
 			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(2), "0x1f");
@@ -229,7 +229,7 @@ public class MasterSeekBarDialogPreference extends
 			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(8), "0x3e");
 			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(9), "0x3e");
 			break;
-		case "-25.0":
+		case "25":
 			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(0), "0x16");
 			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(1), "0x18");
 			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(2), "0x1e");
@@ -241,7 +241,7 @@ public class MasterSeekBarDialogPreference extends
 			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(8), "0x3d");
 			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(9), "0x3d");
 			break;
-		case "-37.5":
+		case "12":
 			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(0), "0x15");
 			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(1), "0x17");
 			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(2), "0x1d");
@@ -253,7 +253,7 @@ public class MasterSeekBarDialogPreference extends
 			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(8), "0x3c");
 			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(9), "0x3c");
 			break;
-		case "-50.0":
+		case "0":
 			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(0), "0x14");
 			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(1), "0x16");
 			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(2), "0x1c");
