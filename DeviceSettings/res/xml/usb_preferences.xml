@@ -2,6 +2,15 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <PreferenceCategory android:title="@string/otg_subcat_title" >
+
+    <PreferenceCategory android:title="@string/eoc_title" >
+        <!-- End of charge -->
+        <Preference
+            android:key="eoc_status"
+            android:summary="@string/eoc_summary_head"
+            android:title="@string/eoc_title_head" />
+    </PreferenceCategory>
+
         <!-- USB OTG Power -->
         <CheckBoxPreference
             android:defaultValue="false"
@@ -23,14 +32,6 @@
             android:key="charger_currency"
             android:summary="@string/cc_summary_head"
             android:title="@string/cc_title_head" />
-    </PreferenceCategory>
-
-    <PreferenceCategory android:title="@string/eoc_title" >
-        <!-- End of charge -->
-        <Preference
-            android:key="eoc_status"
-            android:summary="@string/eoc_summary_head"
-            android:title="@string/eoc_title_head" />
     </PreferenceCategory>
 
 </PreferenceScreen>

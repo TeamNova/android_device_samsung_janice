@@ -41,8 +41,6 @@ public class AdvancedFragmentActivity extends PreferenceFragment {
 
 	private static final String FILE_ACCELEROMETER_CALIB = "/sys/class/sensors/accelerometer_sensor/calibration";
 
-	private static final String FILE_SPI_CRC = "/sys/module/mmc_core/parameters/use_spi_crc";
-
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -76,11 +74,6 @@ public class AdvancedFragmentActivity extends PreferenceFragment {
 			}
 		}
 
-		if (key.equals(DeviceSettings.KEY_USE_SPI_CRC)) {
-			Utils.writeValue(FILE_SPI_CRC, (((CheckBoxPreference) preference).
-					isChecked() ? "0" : "1"));
-		}
-
 		if (key.compareTo(DeviceSettings.KEY_USE_ACCELEROMETER_CALIBRATION) == 0) {
 			Utils.writeValue(FILE_ACCELEROMETER_CALIB, (((CheckBoxPreference) preference).
 					isChecked() ? "1" : "0"));
@@ -105,9 +98,6 @@ public class AdvancedFragmentActivity extends PreferenceFragment {
 		SharedPreferences.Editor editor = sharedPrefs.edit();
 		editor.putBoolean(DeviceSettings.KEY_SWITCH_STORAGE,sstor==1?true:false);
 		editor.commit();
-
-		Utils.writeValue(FILE_SPI_CRC, sharedPrefs.getBoolean(
-				DeviceSettings.KEY_USE_SPI_CRC, false) ? "0" : "1");
 
 		Utils.writeValue(FILE_ACCELEROMETER_CALIB, sharedPrefs.getBoolean(
 				DeviceSettings.KEY_USE_ACCELEROMETER_CALIBRATION, true) ? "1" : "0");

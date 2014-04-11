@@ -54,11 +54,11 @@ public class DeviceSettings extends Activity implements OnItemClickListener{
 	public static final String SELECTION = "selection";
 	
 	public static final String[] titles = new String[] { "Network",
-        "USB", "Audio", "Screen", "GPU", "Power Management", "Advanced" };
+        "USB", "Audio", "Screen", "GPU", "I/O", "Advanced" };
 
 	public static final Integer[] images = { R.drawable.network,
         R.drawable.usb, R.drawable.audio, R.drawable.screen,
-		R.drawable.screen, R.drawable.powermgmt, R.drawable.advanced };
+		R.drawable.screen, R.drawable.io, R.drawable.advanced };
 
 	ListView listView;
 	List<RowItem> rowItems;

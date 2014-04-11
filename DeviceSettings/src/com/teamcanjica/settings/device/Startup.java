@@ -23,7 +23,8 @@ import android.content.Intent;
 import com.teamcanjica.settings.device.fragments.AdvancedFragmentActivity;
 import com.teamcanjica.settings.device.fragments.AudioFragmentActivity;
 import com.teamcanjica.settings.device.fragments.GPUFragmentActivity;
-import com.teamcanjica.settings.device.fragments.PowermgmtFragmentActivity;
+import com.teamcanjica.settings.device.fragments.IOFragmentActivity;
+import com.teamcanjica.settings.device.fragments.NetworkFragmentActivity;
 import com.teamcanjica.settings.device.fragments.ScreenFragmentActivity;
 import com.teamcanjica.settings.device.fragments.USBFragmentActivity;
 
@@ -34,11 +35,11 @@ public class Startup extends BroadcastReceiver {
 		USBFragmentActivity.restore(context);
 		AudioFragmentActivity.restore(context);
 		ScreenFragmentActivity.restore(context);
-		PowermgmtFragmentActivity.restore(context);
+		NetworkFragmentActivity.restore(context);
 		AdvancedFragmentActivity.restore(context);
 		GPUFragmentActivity.restore(context);
 		MasterListPreference.restore(context);
 		ReadaheadkB.restore(context);
-
+		IOFragmentActivity.restore(context);
 	}
 }

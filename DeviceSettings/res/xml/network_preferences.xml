@@ -22,4 +22,11 @@
             android:title="@string/tcp_title_head" />
     </PreferenceCategory>
 
+    <PreferenceCategory android:title="@string/wifi_subcat_title" >
+        <CheckBoxPreference
+            android:key="use_wifipm_max"
+            android:summary="@string/use_wifipm_max_summary_head"
+            android:title="@string/use_wifipm_max_title_head" />
+    </PreferenceCategory>
+
 </PreferenceScreen>

@@ -11,7 +11,7 @@ import com.teamcanjica.settings.device.fragments.AdvancedFragmentActivity;
 import com.teamcanjica.settings.device.fragments.AudioFragmentActivity;
 import com.teamcanjica.settings.device.fragments.GPUFragmentActivity;
 import com.teamcanjica.settings.device.fragments.NetworkFragmentActivity;
-import com.teamcanjica.settings.device.fragments.PowermgmtFragmentActivity;
+import com.teamcanjica.settings.device.fragments.IOFragmentActivity;
 import com.teamcanjica.settings.device.fragments.ScreenFragmentActivity;
 import com.teamcanjica.settings.device.fragments.USBFragmentActivity;
 
@@ -50,8 +50,8 @@ public class ContainerActivity extends Activity {
 			fragment = new GPUFragmentActivity();
 			break;
 		case 5:
-			// Power Management
-			fragment = new PowermgmtFragmentActivity();
+			// I/O
+			fragment = new IOFragmentActivity();
 			break;
 		case 6:
 			// Advanced

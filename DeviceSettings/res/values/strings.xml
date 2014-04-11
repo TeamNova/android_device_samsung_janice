@@ -18,6 +18,11 @@
     <string name="tcp_title_head">TCP Algorithm</string>
     <string name="tcp_summary_head">Switching the algorithm affects your download and upload speeds and latency.</string>
 
+    <!-- SUBCATEGORY: WIFI -->
+    <string name="wifi_subcat_title">Wi-Fi</string>
+    <string name="use_wifipm_max_title_head">Use Wi-Fi PM_MAX mode</string>
+    <string name="use_wifipm_max_summary_head">Using PM_MAX saves power, but internet speed is reduced.</string>
+
     <!-- CATEGORY: USB -->
     <string name="usb_name">USB</string>
 
@@ -103,13 +108,8 @@
     <string name="fsync_title_head">FSync mode</string>
     <string name="fsync_summary_head">Disabling fsync can improve IO performance, but it may cause data corruption. Dynamic fsync will sync all buffers when screen turns off.</string>
 
-    <!-- CATEGORY: Power Management -->
-    <string name="powermgmt_name">Power Management</string>
-
-    <!-- SUBCATEGORY: WIFI -->
-    <string name="wifi_subcat_title">Wi-Fi</string>
-    <string name="use_wifipm_max_title_head">Use Wi-Fi PM_MAX mode</string>
-    <string name="use_wifipm_max_summary_head">Using PM_MAX saves power, but internet speed is reduced.</string>
+    <!-- CATEGORY: I/O -->
+    <string name="io_name">I/O</string>
 
     <!-- SUBCATEGORY: Scheduler -->
     <string name="scheduler_subcat_title">Scheduler</string>
@@ -121,14 +121,6 @@
     <string name="deepest_sleep_title_head">Deepest sleep state</string>
     <string name="deepest_sleep_summary_head">Specify the highest deep sleep level</string>
 
-    <!-- CATEGORY: ADVANCED -->
-    <string name="advanced_name">Advanced</string>
-
-    <!-- SUBCATEGORY: STORAGE -->
-    <string name="storage_subcat_title">Storage</string>
-    <string name="switch_storage_title_head">Swap Storages</string>
-    <string name="switch_storage_summary_head">Switches internal storage partition with external sd-card. Reboot required.</string>
-
     <!-- SUBCATEGORY: Scheduler -->
     <string name="readaheadkb_dialog_message">Select the readahead buffer size.</string>
     <string name="readaheadkb_title_head">Readahead buffer size</string>
@@ -138,6 +130,14 @@
     <string name="mmc_subcat_title">MMC</string>
     <string name="use_spi_crc_title_head">Disable SPI CRC</string>
     <string name="use_spi_crc_summary_head">Disabling SPI CRC can improve mmc performance (10% - 30%) but phone may freeze randomly</string>
+
+    <!-- CATEGORY: ADVANCED -->
+    <string name="advanced_name">Advanced</string>
+
+    <!-- SUBCATEGORY: STORAGE -->
+    <string name="storage_subcat_title">Storage</string>
+    <string name="switch_storage_title_head">Swap Storages</string>
+    <string name="switch_storage_summary_head">Switches internal storage partition with external sd-card. Reboot required.</string>
 
     <!-- SUBCATEGORY: Accelerometer -->
     <string name="accelerometer_subcat_title">Accelerometer</string>
