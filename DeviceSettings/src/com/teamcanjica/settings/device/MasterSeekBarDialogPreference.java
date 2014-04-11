@@ -95,7 +95,7 @@ public class MasterSeekBarDialogPreference extends
 			boolean fromTouch) {
 		// Round the value to the closest integer value.
 		if (stepSize >= 1) {
-			value = (int) Math.round(newValue/stepSize)*stepSize;
+			value = (int) (Math.round(newValue/stepSize)*stepSize);
 		}
 		else {
 			value = newValue;
@@ -143,64 +143,64 @@ public class MasterSeekBarDialogPreference extends
 		} else if (key.equals(DeviceSettings.KEY_CPU_VOLTAGE)) {
 			switch ((String) newValue) {
 			case "37":
-				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(0), "0x17");
-				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(1), "0x19");
-				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(2), "0x1f");
-				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(3), "0x23");
-				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(4), "0x2e");
-				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(5), "0x31");
-				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(6), "0x3e");
-				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(7), "0x3e");
-				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(8), "0x3e");
-				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(9), "0x3e");
+				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(0), "varm=0x17");
+				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(1), "varm=0x19");
+				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(2), "varm=0x1f");
+				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(3), "varm=0x23");
+				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(4), "varm=0x2e");
+				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(5), "varm=0x31");
+				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(6), "varm=0x3e");
+				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(7), "varm=0x3e");
+				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(8), "varm=0x3e");
+				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(9), "varm=0x3e");
 				break;
 			case "25":
-				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(0), "0x16");
-				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(1), "0x18");
-				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(2), "0x1e");
-				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(3), "0x22");
-				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(4), "0x2d");
-				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(5), "0x30");
-				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(6), "0x3d");
-				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(7), "0x3d");
-				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(8), "0x3d");
-				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(9), "0x3d");
+				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(0), "varm=0x16");
+				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(1), "varm=0x18");
+				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(2), "varm=0x1e");
+				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(3), "varm=0x22");
+				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(4), "varm=0x2d");
+				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(5), "varm=0x30");
+				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(6), "varm=0x3d");
+				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(7), "varm=0x3d");
+				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(8), "varm=0x3d");
+				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(9), "varm=0x3d");
 				break;
 			case "12":
-				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(0), "0x15");
-				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(1), "0x17");
-				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(2), "0x1d");
-				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(3), "0x21");
-				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(4), "0x2c");
-				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(5), "0x2f");
-				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(6), "0x3c");
-				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(7), "0x3c");
-				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(8), "0x3c");
-				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(9), "0x3c");
+				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(0), "varm=0x15");
+				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(1), "varm=0x17");
+				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(2), "varm=0x1d");
+				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(3), "varm=0x21");
+				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(4), "varm=0x2c");
+				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(5), "varm=0x2f");
+				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(6), "varm=0x3c");
+				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(7), "varm=0x3c");
+				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(8), "varm=0x3c");
+				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(9), "varm=0x3c");
 				break;
 			case "0":
-				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(0), "0x14");
-				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(1), "0x16");
-				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(2), "0x1c");
-				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(3), "0x20");
-				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(4), "0x2b");
-				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(5), "0x2e");
-				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(6), "0x3b");
-				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(7), "0x3b");
-				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(8), "0x3b");
-				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(9), "0x3b");
+				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(0), "varm=0x14");
+				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(1), "varm=0x16");
+				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(2), "varm=0x1c");
+				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(3), "varm=0x20");
+				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(4), "varm=0x2b");
+				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(5), "varm=0x2e");
+				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(6), "varm=0x3b");
+				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(7), "varm=0x3b");
+				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(8), "varm=0x3b");
+				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(9), "varm=0x3b");
 				break;
 			default:
-				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(0), "0x18");
-				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(1), "0x1a");
-				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(2), "0x20");
-				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(3), "0x24");
-				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(4), "0x2f");
-				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(5), "0x32");
-				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(6), "0x3f");
-				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(7), "0x3f");
-				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(8), "0x3f");
-				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(9), "0x3f");
+				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(0), "varm=0x18");
+				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(1), "varm=0x1a");
+				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(2), "varm=0x20");
+				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(3), "varm=0x24");
+				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(4), "varm=0x2f");
+				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(5), "varm=0x32");
+				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(6), "varm=0x3f");
+				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(7), "varm=0x3f");
+				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(8), "varm=0x3f");
+				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(9), "varm=0x3f");
 				break;
 			}
 		}
@@ -216,66 +216,66 @@ public class MasterSeekBarDialogPreference extends
 		Utils.writeValue(FILE_READAHEADKB,
 				String.valueOf(sharedPrefs.getString(DeviceSettings.KEY_READAHEADKB, "512")));
 
-		switch (String.valueOf(sharedPrefs.getString(DeviceSettings.KEY_CPU_VOLTAGE, "0"))) {
+		switch (String.valueOf(sharedPrefs.getString(DeviceSettings.KEY_CPU_VOLTAGE, "50"))) {
 		case "37":
-			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(0), "0x17");
-			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(1), "0x19");
-			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(2), "0x1f");
-			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(3), "0x23");
-			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(4), "0x2e");
-			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(5), "0x31");
-			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(6), "0x3e");
-			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(7), "0x3e");
-			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(8), "0x3e");
-			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(9), "0x3e");
+			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(0), "varm=0x17");
+			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(1), "varm=0x19");
+			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(2), "varm=0x1f");
+			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(3), "varm=0x23");
+			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(4), "varm=0x2e");
+			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(5), "varm=0x31");
+			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(6), "varm=0x3e");
+			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(7), "varm=0x3e");
+			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(8), "varm=0x3e");
+			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(9), "varm=0x3e");
 			break;
 		case "25":
-			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(0), "0x16");
-			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(1), "0x18");
-			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(2), "0x1e");
-			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(3), "0x22");
-			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(4), "0x2d");
-			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(5), "0x30");
-			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(6), "0x3d");
-			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(7), "0x3d");
-			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(8), "0x3d");
-			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(9), "0x3d");
+			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(0), "varm=0x16");
+			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(1), "varm=0x18");
+			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(2), "varm=0x1e");
+			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(3), "varm=0x22");
+			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(4), "varm=0x2d");
+			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(5), "varm=0x30");
+			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(6), "varm=0x3d");
+			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(7), "varm=0x3d");
+			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(8), "varm=0x3d");
+			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(9), "varm=0x3d");
 			break;
 		case "12":
-			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(0), "0x15");
-			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(1), "0x17");
-			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(2), "0x1d");
-			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(3), "0x21");
-			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(4), "0x2c");
-			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(5), "0x2f");
-			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(6), "0x3c");
-			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(7), "0x3c");
-			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(8), "0x3c");
-			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(9), "0x3c");
+			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(0), "varm=0x15");
+			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(1), "varm=0x17");
+			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(2), "varm=0x1d");
+			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(3), "varm=0x21");
+			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(4), "varm=0x2c");
+			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(5), "varm=0x2f");
+			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(6), "varm=0x3c");
+			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(7), "varm=0x3c");
+			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(8), "varm=0x3c");
+			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(9), "varm=0x3c");
 			break;
 		case "0":
-			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(0), "0x14");
-			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(1), "0x16");
-			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(2), "0x1c");
-			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(3), "0x20");
-			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(4), "0x2b");
-			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(5), "0x2e");
-			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(6), "0x3b");
-			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(7), "0x3b");
-			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(8), "0x3b");
-			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(9), "0x3b");
+			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(0), "varm=0x14");
+			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(1), "varm=0x16");
+			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(2), "varm=0x1c");
+			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(3), "varm=0x20");
+			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(4), "varm=0x2b");
+			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(5), "varm=0x2e");
+			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(6), "varm=0x3b");
+			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(7), "varm=0x3b");
+			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(8), "varm=0x3b");
+			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(9), "varm=0x3b");
 			break;
 		default:
-			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(0), "0x18");
-			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(1), "0x1a");
-			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(2), "0x20");
-			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(3), "0x24");
-			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(4), "0x2f");
-			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(5), "0x32");
-			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(6), "0x3f");
-			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(7), "0x3f");
-			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(8), "0x3f");
-			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(9), "0x3f");
+			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(0), "varm=0x18");
+			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(1), "varm=0x1a");
+			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(2), "varm=0x20");
+			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(3), "varm=0x24");
+			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(4), "varm=0x2f");
+			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(5), "varm=0x32");
+			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(6), "varm=0x3f");
+			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(7), "varm=0x3f");
+			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(8), "varm=0x3f");
+			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(9), "varm=0x3f");
 			break;
 		}
 	}
