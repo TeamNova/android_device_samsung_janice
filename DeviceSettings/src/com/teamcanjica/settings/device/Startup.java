@@ -39,7 +39,7 @@ public class Startup extends BroadcastReceiver {
 		AdvancedFragmentActivity.restore(context);
 		GPUFragmentActivity.restore(context);
 		MasterListPreference.restore(context);
-		ReadaheadkB.restore(context);
+		MasterSeekBarDialogPreference.restore(context);
 		IOFragmentActivity.restore(context);
 	}
 }

@@ -147,7 +147,13 @@
     <string name="calibrate_accelerometer_summary_head">Put your phone on a flat surface, and press this to calibrate</string>
     <string name="accelerometer_dialog_head">Calibration done</string>
     <string name="accelerometer_dialog_message">The sensor has been successfully calibrated.</string>
-    
+
+    <!-- SUBCATEGORY: Voltages -->
+    <string name="voltages_subcat_title">Voltages</string>
+    <string name="cpu_voltage_title_head">CPU Voltages</string>
+    <string name="cpu_voltage_summary_head">Adjust the universal CPU voltages. <b>BEWARE! Too HIGH or too LOW voltages may cause reboots!</b></string>
+	<string name="cpu_voltage_dialog_message">Adjust the voltage change.</string>
+
     <!-- CATEGORY: GPU -->
     <string name="gpu_name">GPU</string>
     

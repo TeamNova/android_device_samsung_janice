@@ -72,9 +72,7 @@ public class AdvancedFragmentActivity extends PreferenceFragment {
 			} catch (InterruptedException e) {
 			    e.printStackTrace();
 			}
-		}
-
-		if (key.compareTo(DeviceSettings.KEY_USE_ACCELEROMETER_CALIBRATION) == 0) {
+		} else if (key.compareTo(DeviceSettings.KEY_USE_ACCELEROMETER_CALIBRATION) == 0) {
 			Utils.writeValue(FILE_ACCELEROMETER_CALIB, (((CheckBoxPreference) preference).
 					isChecked() ? "1" : "0"));
 		} else if (key.compareTo(DeviceSettings.KEY_CALIBRATE_ACCELEROMETER) == 0) {
