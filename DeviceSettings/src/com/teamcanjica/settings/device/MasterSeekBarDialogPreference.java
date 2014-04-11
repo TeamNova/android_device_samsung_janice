@@ -142,8 +142,8 @@ public class MasterSeekBarDialogPreference extends
 		if (key.equals(DeviceSettings.KEY_READAHEADKB)) {
 			Utils.writeValue(FILE_READAHEADKB, String.valueOf((Integer) newValue + 128));
 		} else if (key.equals(DeviceSettings.KEY_CPU_VOLTAGE)) {
-			switch (String.valueOf((Integer) newValue)) {
-			case "37":
+			switch ((Integer) newValue) {
+			case 37:
 				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(0), "varm=0x17");
 				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(1), "varm=0x19");
 				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(2), "varm=0x1f");
@@ -155,7 +155,7 @@ public class MasterSeekBarDialogPreference extends
 				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(8), "varm=0x3e");
 				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(9), "varm=0x3e");
 				break;
-			case "25":
+			case 25:
 				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(0), "varm=0x16");
 				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(1), "varm=0x18");
 				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(2), "varm=0x1e");
@@ -167,7 +167,7 @@ public class MasterSeekBarDialogPreference extends
 				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(8), "varm=0x3d");
 				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(9), "varm=0x3d");
 				break;
-			case "12":
+			case 12:
 				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(0), "varm=0x15");
 				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(1), "varm=0x17");
 				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(2), "varm=0x1d");
@@ -179,7 +179,7 @@ public class MasterSeekBarDialogPreference extends
 				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(8), "varm=0x3c");
 				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(9), "varm=0x3c");
 				break;
-			case "0":
+			case 0:
 				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(0), "varm=0x14");
 				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(1), "varm=0x16");
 				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(2), "varm=0x1c");
@@ -218,16 +218,16 @@ public class MasterSeekBarDialogPreference extends
 		SharedPreferences sharedPrefs = PreferenceManager
 				.getDefaultSharedPreferences(context);
 
+		Utils.writeValue(FILE_CYCLE_CHARGING, 
+				"dischar=" + sharedPrefs.getString(DeviceSettings.KEY_DISCHARGING_THRESHOLD, "100"));
 		Utils.writeValue(FILE_CYCLE_CHARGING,
-				sharedPrefs.getString(DeviceSettings.KEY_DISCHARGING_THRESHOLD, "rechar=100"));
-		Utils.writeValue(FILE_CYCLE_CHARGING,
-				sharedPrefs.getString(DeviceSettings.KEY_RECHARGING_THRESHOLD, "rechar=100"));
+				"rechar=" + sharedPrefs.getString(DeviceSettings.KEY_RECHARGING_THRESHOLD, "100"));
 
 		Utils.writeValue(FILE_READAHEADKB,
 				String.valueOf(sharedPrefs.getString(DeviceSettings.KEY_READAHEADKB, "512")));
 
-		switch (String.valueOf(sharedPrefs.getString(DeviceSettings.KEY_CPU_VOLTAGE, "50"))) {
-		case "37":
+		switch (Integer.parseInt(sharedPrefs.getString(DeviceSettings.KEY_CPU_VOLTAGE, "50"))) {
+		case 37:
 			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(0), "varm=0x17");
 			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(1), "varm=0x19");
 			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(2), "varm=0x1f");
@@ -239,7 +239,7 @@ public class MasterSeekBarDialogPreference extends
 			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(8), "varm=0x3e");
 			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(9), "varm=0x3e");
 			break;
-		case "25":
+		case 25:
 			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(0), "varm=0x16");
 			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(1), "varm=0x18");
 			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(2), "varm=0x1e");
@@ -251,7 +251,7 @@ public class MasterSeekBarDialogPreference extends
 			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(8), "varm=0x3d");
 			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(9), "varm=0x3d");
 			break;
-		case "12":
+		case 12:
 			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(0), "varm=0x15");
 			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(1), "varm=0x17");
 			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(2), "varm=0x1d");
@@ -263,7 +263,7 @@ public class MasterSeekBarDialogPreference extends
 			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(8), "varm=0x3c");
 			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(9), "varm=0x3c");
 			break;
-		case "0":
+		case 0:
 			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(0), "varm=0x14");
 			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(1), "varm=0x16");
 			Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(2), "varm=0x1c");
