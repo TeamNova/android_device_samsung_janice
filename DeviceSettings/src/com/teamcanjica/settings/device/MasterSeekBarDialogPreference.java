@@ -141,7 +141,7 @@ public class MasterSeekBarDialogPreference extends
 		if (key.equals(DeviceSettings.KEY_READAHEADKB)) {
 			Utils.writeValue(FILE_READAHEADKB, String.valueOf((Integer) newValue + 128));
 		} else if (key.equals(DeviceSettings.KEY_CPU_VOLTAGE)) {
-			switch ((String) newValue) {
+			switch String.valueOf((Integer) newValue) {
 			case "37":
 				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(0), "varm=0x17");
 				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(1), "varm=0x19");
