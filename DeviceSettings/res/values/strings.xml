@@ -38,6 +38,17 @@
     <string name="cc_title_head">Charger currency</string>
     <string name="cc_summary_head">Charger currency in mA, low levels protect battery but takes longer to charge, high levels may damage battery life</string>
 
+    <!-- SUBCATEGORY: Cycle Charging Control -->
+    <string name="ccc_subcat_title">Cycle Charging</string>
+    <string name="use_ccc_title_head">Control Cycle Charging</string>
+    <string name="use_ccc_summary_head">Enables Cycle Charging Control</string>
+    <string name="dt_title_head">Discharging threshold</string>
+    <string name="dt_summary_head">After this level is reached phone will start discharging.</string>
+	<string name="dt_dialog_message">Select end battery level of charging</string>
+    <string name="rt_title_head">Recharging threshold</string>
+    <string name="rt_summary_head">After this level is reached phone will start charging again. <b>Note: Recharging threshold must be lower than discharging threshold!</b> </string>
+	<string name="rt_dialog_message">Select recherging battery level</string>
+
     <!-- SUBCATEGORY: End of charge -->
     <string name="eoc_title">Charge status</string>
     <string name="eoc_title_head">End of charge</string>

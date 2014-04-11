@@ -9,19 +9,6 @@
             android:title="@string/switch_storage_title_head" />
     </PreferenceCategory>
 
-    <PreferenceCategory android:title="@string/accelerometer_subcat_title" >
-        <!-- Use sensor calibration -->
-        <CheckBoxPreference
-            android:key="use_accelerometer_calibration"
-            android:summary="@string/use_accelerometer_calibration_summary_head"
-            android:title="@string/use_accelerometer_calibration_title_head" />
-        <!-- Do accelerometer calibration -->
-        <Preference
-            android:key="calibrate_accelerometer"
-            android:summary="@string/calibrate_accelerometer_summary_head"
-            android:title="@string/calibrate_accelerometer_title_head" />
-    </PreferenceCategory>
-
     <PreferenceCategory android:title="@string/voltages_subcat_title" >
         <com.teamcanjica.settings.device.MasterSeekBarDialogPreference
             android:key="cpu_voltage"
@@ -33,6 +20,19 @@
             teamcanjica:minimumValue="-50"
             teamcanjica:units="mV"
             teamcanjica:stepSize="12.5" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/accelerometer_subcat_title" >
+        <!-- Use sensor calibration -->
+        <CheckBoxPreference
+            android:key="use_accelerometer_calibration"
+            android:summary="@string/use_accelerometer_calibration_summary_head"
+            android:title="@string/use_accelerometer_calibration_title_head" />
+        <!-- Do accelerometer calibration -->
+        <Preference
+            android:key="calibrate_accelerometer"
+            android:summary="@string/calibrate_accelerometer_summary_head"
+            android:title="@string/calibrate_accelerometer_title_head" />
     </PreferenceCategory>
 
 </PreferenceScreen>

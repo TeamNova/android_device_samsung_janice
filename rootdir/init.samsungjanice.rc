@@ -618,6 +618,7 @@ service fuse_sdcard1 /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/sdcard1
     on property:sys.boot_completed=1 
     chown system system /sys/block/mmcblk0/queue/read_ahead_kb
     chown system system /sys/devices/system/cpu/sched_mc_power_savings
+    chown system system /sys/kernel/abb-fg/cyc_fg
     chown system system /sys/kernel/abb-charger/charger_curr
     chown system system /sys/kernel/abb-chargalg/eoc_first
     chown system system /sys/kernel/abb-chargalg/eoc_real

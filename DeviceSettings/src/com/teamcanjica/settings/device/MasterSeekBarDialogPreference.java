@@ -33,6 +33,7 @@ public class MasterSeekBarDialogPreference extends
 
 	private static final String FILE_READAHEADKB = "/sys/block/mmcblk0/queue/read_ahead_kb";
 	private static final String FILE_CPU_VOLTAGE = "/sys/kernel/liveopp/arm_step";
+	private static final String FILE_CYCLE_CHARGING = "/sys/kernel/abb-fg/cyc_fg";
 
 	/**
 	 * The SeekBarDialogPreference constructor.
@@ -141,7 +142,7 @@ public class MasterSeekBarDialogPreference extends
 		if (key.equals(DeviceSettings.KEY_READAHEADKB)) {
 			Utils.writeValue(FILE_READAHEADKB, String.valueOf((Integer) newValue + 128));
 		} else if (key.equals(DeviceSettings.KEY_CPU_VOLTAGE)) {
-			switch String.valueOf((Integer) newValue) {
+			switch (String.valueOf((Integer) newValue)) {
 			case "37":
 				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(0), "varm=0x17");
 				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(1), "varm=0x19");
@@ -203,6 +204,10 @@ public class MasterSeekBarDialogPreference extends
 				Utils.writeValue(FILE_CPU_VOLTAGE + String.valueOf(9), "varm=0x3f");
 				break;
 			}
+		} else if (key.equals(DeviceSettings.KEY_DISCHARGING_THRESHOLD)) {
+			Utils.writeValue(FILE_CYCLE_CHARGING, "dischar=" + String.valueOf((Integer) newValue));
+		} else if (key.equals(DeviceSettings.KEY_RECHARGING_THRESHOLD)) {
+			Utils.writeValue(FILE_CYCLE_CHARGING, "rechar=" + String.valueOf((Integer) newValue));
 		}
 
 		return true;
@@ -212,6 +217,11 @@ public class MasterSeekBarDialogPreference extends
 
 		SharedPreferences sharedPrefs = PreferenceManager
 				.getDefaultSharedPreferences(context);
+
+		Utils.writeValue(FILE_CYCLE_CHARGING,
+				sharedPrefs.getString(DeviceSettings.KEY_DISCHARGING_THRESHOLD, "rechar=100"));
+		Utils.writeValue(FILE_CYCLE_CHARGING,
+				sharedPrefs.getString(DeviceSettings.KEY_RECHARGING_THRESHOLD, "rechar=100"));
 
 		Utils.writeValue(FILE_READAHEADKB,
 				String.valueOf(sharedPrefs.getString(DeviceSettings.KEY_READAHEADKB, "512")));
