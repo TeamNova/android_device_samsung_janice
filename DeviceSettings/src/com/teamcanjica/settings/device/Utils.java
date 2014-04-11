@@ -150,4 +150,9 @@ public class Utils {
 				});
 		alertDialog.show();
 	}
+	
+
+	public static boolean isSupported(String FILE) {
+		return Utils.fileExists(FILE);
+	}
 }

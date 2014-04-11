@@ -58,7 +58,6 @@ public class AdvancedFragmentActivity extends PreferenceFragment {
 	public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
 			Preference preference) {
 
-		String boxValue;
 		String key = preference.getKey();
 
 		Log.w(TAG, "key: " + key);
@@ -78,15 +77,13 @@ public class AdvancedFragmentActivity extends PreferenceFragment {
 		}
 
 		if (key.equals(DeviceSettings.KEY_USE_SPI_CRC)) {
-			boxValue = (((CheckBoxPreference) preference).isChecked() ? "0"
-					: "1");
-			Utils.writeValue(FILE_SPI_CRC, boxValue);
+			Utils.writeValue(FILE_SPI_CRC, (((CheckBoxPreference) preference).
+					isChecked() ? "0" : "1"));
 		}
 
 		if (key.compareTo(DeviceSettings.KEY_USE_ACCELEROMETER_CALIBRATION) == 0) {
-			boxValue = (((CheckBoxPreference) preference).isChecked() ? "1"
-					: "0");
-			Utils.writeValue(FILE_ACCELEROMETER_CALIB, boxValue);
+			Utils.writeValue(FILE_ACCELEROMETER_CALIB, (((CheckBoxPreference) preference).
+					isChecked() ? "1" : "0"));
 		} else if (key.compareTo(DeviceSettings.KEY_CALIBRATE_ACCELEROMETER) == 0) {
 			// when calibration data utilization is disabled and enabled back,
 			// calibration is done at the same time by driver
@@ -109,14 +106,11 @@ public class AdvancedFragmentActivity extends PreferenceFragment {
 		editor.putBoolean(DeviceSettings.KEY_SWITCH_STORAGE,sstor==1?true:false);
 		editor.commit();
 
-		String crcvalue = sharedPrefs.getBoolean(
-				DeviceSettings.KEY_USE_SPI_CRC, false) ? "0" : "1";
-		Utils.writeValue(FILE_SPI_CRC, crcvalue);
+		Utils.writeValue(FILE_SPI_CRC, sharedPrefs.getBoolean(
+				DeviceSettings.KEY_USE_SPI_CRC, false) ? "0" : "1");
 
-		boolean accelerometerCalib = sharedPrefs.getBoolean(
-				DeviceSettings.KEY_USE_ACCELEROMETER_CALIBRATION, true);
-		if (!accelerometerCalib)
-			Utils.writeValue(FILE_ACCELEROMETER_CALIB, "0");
+		Utils.writeValue(FILE_ACCELEROMETER_CALIB, sharedPrefs.getBoolean(
+				DeviceSettings.KEY_USE_ACCELEROMETER_CALIBRATION, true) ? "1" : "0");
 
 	}
 

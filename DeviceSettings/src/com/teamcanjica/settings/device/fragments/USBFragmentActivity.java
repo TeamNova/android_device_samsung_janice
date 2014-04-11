@@ -41,6 +41,8 @@ public class USBFragmentActivity extends PreferenceFragment {
 	private static final String FILE_VOTG = "/sys/kernel/abb-regu/VOTG";
 	private static final String FILE_CHARGER_CONTROL = "/sys/kernel/abb-charger/charger_curr";
 	private static final String FILE_EOC = "/sys/kernel/abb-chargalg/eoc_status";
+	private static final String FILE_EOC_FIRST = "/sys/kernel/abb-chargalg/eoc_first";
+	private static final String FILE_EOC_REAL = "/sys/kernel/abb-chargalg/eoc_real";
 
 
 	@Override
@@ -49,14 +51,8 @@ public class USBFragmentActivity extends PreferenceFragment {
 
 		addPreferencesFromResource(R.xml.usb_preferences);
 
-		PreferenceScreen prefSet = getPreferenceScreen();
-
-		prefSet.findPreference(DeviceSettings.KEY_USB_OTG_POWER).setEnabled(
-				isSupported(FILE_VOTG));
-		prefSet.findPreference(DeviceSettings.KEY_USE_CHARGER_CONTROL).setEnabled(
-				isSupported(FILE_CHARGER_CONTROL));
-		prefSet.findPreference(DeviceSettings.KEY_CHARGER_CURRENCY).setEnabled(
-		false);
+		getPreferenceScreen().findPreference(DeviceSettings.KEY_CHARGER_CURRENCY).setEnabled(
+				((CheckBoxPreference) findPreference("use_charger_control")).isChecked());
 
 		getActivity().getActionBar().setTitle(getResources().getString(R.string.usb_name));
 		getActivity().getActionBar().setIcon(getResources().getDrawable(R.drawable.usb_icon));
@@ -73,23 +69,15 @@ public class USBFragmentActivity extends PreferenceFragment {
 		Log.w(TAG, "key: " + key);
 
 		if (key.equals(DeviceSettings.KEY_USB_OTG_POWER)) {
-			if (((CheckBoxPreference) preference).isChecked()) {
-				Utils.writeValue(FILE_VOTG, "1");
-			} else {
-				Utils.writeValue(FILE_VOTG, "0");
-			}
+				Utils.writeValue(FILE_VOTG,
+						((CheckBoxPreference) preference).isChecked() ? "1" : "0");
 		}
 
 		if (key.equals(DeviceSettings.KEY_USE_CHARGER_CONTROL)) {
-			if (((CheckBoxPreference) preference).isChecked()) {
-				Utils.writeValue(FILE_CHARGER_CONTROL, "on");
+				Utils.writeValue(FILE_CHARGER_CONTROL,
+						((CheckBoxPreference) preference).isChecked() ? "on" : "off");
 				getPreferenceScreen().findPreference(DeviceSettings.KEY_CHARGER_CURRENCY).setEnabled(
-				true);
-			} else {
-				Utils.writeValue(FILE_CHARGER_CONTROL, "off");
-				getPreferenceScreen().findPreference(DeviceSettings.KEY_CHARGER_CURRENCY).setEnabled(
-				false);
-			}
+						((CheckBoxPreference) preference).isChecked());
 		}
 
 		if (key.compareTo(DeviceSettings.KEY_EOC) == 0) {
@@ -107,26 +95,25 @@ public class USBFragmentActivity extends PreferenceFragment {
 			Utils.showDialog((Context) getActivity(),
 					getString(R.string.eoc_title),
 					(String) eoc);
+			// Reset EOC status when Real EOC is reached
+			if (((String) eoc) == "Real EOC reached") {
+				Utils.writeValue(FILE_EOC_REAL, "0");
+				Utils.writeValue(FILE_EOC_FIRST, "0");
+			}
 
 		}
 
 		return true;
 	}
 
-	public static boolean isSupported(String FILE) {
-		return Utils.fileExists(FILE);
-	}
-
 	public static void restore(Context context) {
 		SharedPreferences sharedPrefs = PreferenceManager
 				.getDefaultSharedPreferences(context);
 
-		String votgvalue = sharedPrefs.getBoolean(
-				DeviceSettings.KEY_USB_OTG_POWER, false) ? "1" : "0";
-		Utils.writeValue(FILE_VOTG, votgvalue);
+		Utils.writeValue(FILE_VOTG, sharedPrefs.getBoolean(
+				DeviceSettings.KEY_USB_OTG_POWER, false) ? "1" : "0");
 
-		String ccvalue = sharedPrefs.getBoolean(
-				DeviceSettings.KEY_USE_CHARGER_CONTROL, false) ? "on" : "off";
-		Utils.writeValue(FILE_CHARGER_CONTROL, ccvalue);
+		Utils.writeValue(FILE_CHARGER_CONTROL, sharedPrefs.getBoolean(
+				DeviceSettings.KEY_USE_CHARGER_CONTROL, false) ? "on" : "off");
 	}
 }
