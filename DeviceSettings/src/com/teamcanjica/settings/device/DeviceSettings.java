@@ -22,6 +22,9 @@ public class DeviceSettings extends Activity implements OnItemClickListener{
 	public static final String KEY_DEEPEST_SLEEP_STATE = "deepest_sleep_state";
 	public static final String KEY_USE_CHARGER_CONTROL = "use_charger_control";
 	public static final String KEY_CHARGER_CURRENCY = "charger_currency";
+	public static final String KEY_USE_CYCLE_CHARGING = "use_cycle_charging";
+	public static final String KEY_DISCHARGING_THRESHOLD = "discharging_threshold";
+	public static final String KEY_RECHARGING_THRESHOLD = "recharging_threshold";
 	public static final String KEY_EOC = "eoc_status";
 	public static final String KEY_FSYNC_MODE = "fsync_mode";
 	public static final String KEY_TCP_CONTROL = "tcp_control";
@@ -50,15 +53,16 @@ public class DeviceSettings extends Activity implements OnItemClickListener{
 	public static final String KEY_DISABLE_AUTOBOOST = "disable_autoboost";
 	public static final String KEY_SET_GPU_CLOCK = "set_gpu_clock";
 	public static final String KEY_DISABLE_FULLSPEED = "disable_fullspeed";
+	public static final String KEY_CPU_VOLTAGE = "cpu_voltage";
 	
 	public static final String SELECTION = "selection";
 	
 	public static final String[] titles = new String[] { "Network",
-        "USB", "Audio", "Screen", "GPU", "Power Management", "Advanced" };
+        "USB", "Audio", "Screen", "GPU", "I/O", "Advanced" };
 
 	public static final Integer[] images = { R.drawable.network,
         R.drawable.usb, R.drawable.audio, R.drawable.screen,
-		R.drawable.screen, R.drawable.powermgmt, R.drawable.advanced };
+		R.drawable.screen, R.drawable.io, R.drawable.advanced };
 
 	ListView listView;
 	List<RowItem> rowItems;

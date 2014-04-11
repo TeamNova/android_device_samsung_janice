@@ -7,7 +7,7 @@
         <item>Audio</item>
         <item>Screen</item>
         <item>GPU</item>
-        <item>Power Management</item>
+        <item>I/O</item>
         <item>Advanced</item>
     </string-array>
 

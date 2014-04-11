@@ -35,7 +35,7 @@
 		<activity android:name="com.teamcanjica.settings.device.fragments.NetworkFragmentActivity" />
 		<activity android:name="com.teamcanjica.settings.device.fragments.USBFragmentActivity" />
 		<activity android:name="com.teamcanjica.settings.device.fragments.AudioFragmentActivity" />
-		<activity android:name="com.teamcanjica.settings.device.fragments.PowermgmtFragmentActivity" />
+		<activity android:name="com.teamcanjica.settings.device.fragments.IOFragmentActivity" />
 		<activity android:name="com.teamcanjica.settings.device.fragments.AdvancedFragmentActivity" />
 		<activity android:name="com.teamcanjica.settings.device.fragments.GPUFragmentActivity" />
 		<activity android:name="com.teamcanjica.settings.device.fragments.ScreenFragmentActivity" />

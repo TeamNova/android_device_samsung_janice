@@ -40,6 +40,7 @@ public class USBFragmentActivity extends PreferenceFragment {
 	private static final String TAG = "GalaxySAdvance_Settings_USB";
 	private static final String FILE_VOTG = "/sys/kernel/abb-regu/VOTG";
 	private static final String FILE_CHARGER_CONTROL = "/sys/kernel/abb-charger/charger_curr";
+	private static final String FILE_CYCLE_CHARGING_CONTROL = "/sys/kernel/abb-fg/cyc_fg";
 	private static final String FILE_EOC = "/sys/kernel/abb-chargalg/eoc_status";
 	private static final String FILE_EOC_FIRST = "/sys/kernel/abb-chargalg/eoc_first";
 	private static final String FILE_EOC_REAL = "/sys/kernel/abb-chargalg/eoc_real";
@@ -53,6 +54,12 @@ public class USBFragmentActivity extends PreferenceFragment {
 
 		getPreferenceScreen().findPreference(DeviceSettings.KEY_CHARGER_CURRENCY).setEnabled(
 				((CheckBoxPreference) findPreference("use_charger_control")).isChecked());
+
+		getPreferenceScreen().findPreference(DeviceSettings.KEY_DISCHARGING_THRESHOLD).setEnabled(
+				((CheckBoxPreference) findPreference("use_cycle_charging")).isChecked());
+
+		getPreferenceScreen().findPreference(DeviceSettings.KEY_RECHARGING_THRESHOLD).setEnabled(
+				((CheckBoxPreference) findPreference("use_cycle_charging")).isChecked());
 
 		getActivity().getActionBar().setTitle(getResources().getString(R.string.usb_name));
 		getActivity().getActionBar().setIcon(getResources().getDrawable(R.drawable.usb_icon));
@@ -78,6 +85,15 @@ public class USBFragmentActivity extends PreferenceFragment {
 						((CheckBoxPreference) preference).isChecked() ? "on" : "off");
 				getPreferenceScreen().findPreference(DeviceSettings.KEY_CHARGER_CURRENCY).setEnabled(
 						((CheckBoxPreference) preference).isChecked());
+		}
+
+		if (key.equals(DeviceSettings.KEY_USE_CYCLE_CHARGING)) {
+			Utils.writeValue(FILE_CYCLE_CHARGING_CONTROL,
+					((CheckBoxPreference) preference).isChecked() ? "on" : "off");
+			getPreferenceScreen().findPreference(DeviceSettings.KEY_DISCHARGING_THRESHOLD).setEnabled(
+					((CheckBoxPreference) preference).isChecked());
+			getPreferenceScreen().findPreference(DeviceSettings.KEY_RECHARGING_THRESHOLD).setEnabled(
+					((CheckBoxPreference) preference).isChecked());
 		}
 
 		if (key.compareTo(DeviceSettings.KEY_EOC) == 0) {
@@ -115,5 +131,9 @@ public class USBFragmentActivity extends PreferenceFragment {
 
 		Utils.writeValue(FILE_CHARGER_CONTROL, sharedPrefs.getBoolean(
 				DeviceSettings.KEY_USE_CHARGER_CONTROL, false) ? "on" : "off");
+
+		Utils.writeValue(FILE_CYCLE_CHARGING_CONTROL, sharedPrefs.getBoolean(
+				DeviceSettings.KEY_USE_CYCLE_CHARGING, false) ? "on" : "off");
+
 	}
 }

@@ -37,37 +37,21 @@ OnPreferenceChangeListener {
 		
 		if (key.equals(DeviceSettings.KEY_SET_GPU_CLOCK)) {
 			Utils.writeValue(FILE_MALI_GPU_CLOCK, (String) newValue);
-		}
-		
-		if (key.equals(DeviceSettings.KEY_FSYNC_MODE)) {
+		} else if (key.equals(DeviceSettings.KEY_FSYNC_MODE)) {
 			Utils.writeValue(FILE_FSYNC_MODE, (String) newValue);
-		}
-		
-		if (key.equals(DeviceSettings.KEY_CHARGER_CURRENCY)) {
+		} else if (key.equals(DeviceSettings.KEY_CHARGER_CURRENCY)) {
 			Utils.writeValue(FILE_CHARGER_CURR, (String) newValue);
-		}
-		
-		if (key.equals(DeviceSettings.KEY_DEEPEST_SLEEP_STATE)) {
+		} else if (key.equals(DeviceSettings.KEY_DEEPEST_SLEEP_STATE)) {
 			Utils.writeValue(FILE_DEEPEST_SLEEP_STATE, (String) newValue);
-		}
-		
-		if (key.equals(DeviceSettings.KEY_HSPA)) {
+		} else if (key.equals(DeviceSettings.KEY_HSPA)) {
 			sendIntent(mCtx, (String) newValue);
-		}
-		
-		if (key.equals(DeviceSettings.KEY_MALI_L2MR)) {
+		} else if (key.equals(DeviceSettings.KEY_MALI_L2MR)) {
 			Utils.writeValue(FILE_MALIL2_MAX_READS, (String) newValue);
-		}
-		
-		if (key.equals(DeviceSettings.KEY_MALI_PAM)) {
+		} else if (key.equals(DeviceSettings.KEY_MALI_PAM)) {
 			Utils.writeValue(FILE_MALI_PREALLOC_MEM, (String) newValue);
-		}
-		
-		if (key.equals(DeviceSettings.KEY_SCHED_MC)) {
+		} else if (key.equals(DeviceSettings.KEY_SCHED_MC)) {
 			Utils.writeValue(FILE_SCHED_MC, (String) newValue);
-		}
-		
-		if (key.equals(DeviceSettings.KEY_TCP_CONTROL)) {
+		} else if (key.equals(DeviceSettings.KEY_TCP_CONTROL)) {
 			try {
 				Process tcp = Runtime.getRuntime().exec(new String[]{
 						"su", "-c", "sysctl -w net.ipv4.tcp_congestion_control=" + (String) newValue});

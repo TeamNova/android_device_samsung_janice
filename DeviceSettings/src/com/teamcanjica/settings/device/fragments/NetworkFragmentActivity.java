@@ -16,14 +16,25 @@
 
 package com.teamcanjica.settings.device.fragments;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.CheckBoxPreference;
+import android.preference.Preference;
 import android.preference.PreferenceFragment;
+import android.preference.PreferenceManager;
+import android.preference.PreferenceScreen;
+import android.util.Log;
 
+import com.teamcanjica.settings.device.DeviceSettings;
 import com.teamcanjica.settings.device.R;
+import com.teamcanjica.settings.device.Utils;
 
 public class NetworkFragmentActivity extends PreferenceFragment {
 
-//	private static final String TAG = "GalaxySAdvance_Settings_Network";
+	private static final String TAG = "GalaxySAdvance_Settings_Network";
+
+	private static final String FILE_WIFI_PM = "/sys/module/dhd/parameters/dhdpm_fast";
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -33,6 +44,31 @@ public class NetworkFragmentActivity extends PreferenceFragment {
 
 		getActivity().getActionBar().setTitle(getResources().getString(R.string.network_name));
 		getActivity().getActionBar().setIcon(getResources().getDrawable(R.drawable.network_icon));
+	}
+
+	@Override
+	public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
+			Preference preference) {
+
+		String key = preference.getKey();
+
+		Log.w(TAG, "key: " + key);
+
+		if (key.equals(DeviceSettings.KEY_USE_WIFIPM_MAX)) {
+			Utils.writeValue(FILE_WIFI_PM, (((CheckBoxPreference) preference).
+					isChecked() ? "0" : "1"));
+		}
+
+		return true;
+	}
+
+	public static void restore(Context context) {
+		SharedPreferences sharedPrefs = PreferenceManager
+				.getDefaultSharedPreferences(context);
+
+		Utils.writeValue(FILE_WIFI_PM, sharedPrefs.getBoolean(
+				DeviceSettings.KEY_USE_WIFIPM_MAX, false) ? "0" : "1");
+
 	}
 
 }
