@@ -8,15 +8,9 @@ PRODUCT_RELEASE_NAME := GT-I9070
 $(call inherit-product, vendor/mahdi/configs/common.mk)
 $(call inherit-product, vendor/mahdi/configs/common_full_phone.mk)
 
-<<<<<<< HEAD:mahdi.mk
 # Copy device specific prebuilt files.
 PRODUCT_COPY_FILES += \
     vendor/mahdi/prebuilt/bootanimations/BOOTANIMATION-800x480.zip:system/media/bootanimation.zip
-
-=======
-# Inherit some common CM stuff.
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
->>>>>>> bb2f6d5f4059de30d836e19efe71d3bad21b20e2:cm.mk
 
 # Inherit device configuration
 $(call inherit-product, device/samsung/janice/full_janice.mk)
