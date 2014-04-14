@@ -1,0 +1,2 @@
+add_lunch_combo mk_janice-userdebug
+add_lunch_combo mk_janice-eng
