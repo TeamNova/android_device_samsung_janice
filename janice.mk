@@ -14,16 +14,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     media.aac_51_output_enabled=true
 
-<<<<<<< HEAD
-# Packages
-PRODUCT_PACKAGES += \
-    GalaxySAdvanceSettings \
-    Stk \
-    org.cyanogenmod.hardware \
-    org.cyanogenmod.hardware.xml
-
-=======
->>>>>>> bb2f6d5f4059de30d836e19efe71d3bad21b20e2
 # GPS
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf \
@@ -54,4 +44,4 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf
 
 # Use non-open-source parts if present
-$(call inherit-product-if-exists, vendor/samsung/janice/janice-vendor-blobs.mk)
+$(call inherit-product-if-exists, vendor/samsung/u8500-common/janice/janice-vendor-blobs.mk)
